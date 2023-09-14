@@ -1,0 +1,35 @@
+#{extends 'main.html' /}
+#{set title:'Cadastro de Pessoa' /}
+
+<h1>#{get 'title' /}</h1>
+
+
+<fieldset>
+	<Legend>Insira os dados Requesitados</Legend>
+<form action="@{Pessoas.cadastrar}" method="POST" class="row g-3">
+	<input class="" type="hidden" name="p.id" value="${p?.id}"/>
+	<div class="col-md-6">
+	  <label class="form-label">Nome</label>
+	  <input class="form-control" type="text" name="p.nome" value="${p?.nome}">
+	</div>
+	<div class="col-md-6">
+	  <label class="form-label">Telefone</label>
+	  <input class="form-control" type="text" name="p.telefone" value="${p?.telefone}">
+	</div>
+	<div class="col-12">
+	  <label class="form-label">Email</label>
+	  <input class="form-control" type="email" name="p.email" value="${p?.email}">
+	</div>
+	<div class="col-12">
+	  <label class="form-label">Endereço</label>
+	  <input class="form-control" type="text" name="p.endereco" value="${p?.endereco}">
+	</div>
+	<div class="col-md-6">
+	  <label for="inputCity" class="form-label">Senha</label>
+	  <input class="form-control" type="password" name="p.senha" value="${p?.senha}">
+	</div>
+	<div class="col-12">
+	  <button type="submit" class="btn btn-primary">Submeter</button>
+	</div>
+</form>
+</fieldset>
