@@ -1,3 +1,8 @@
+package controllers;
+
+import models.Pessoa;
+import play.mvc.Controller;
+
 public class Logins extends Controller {
 
     public static void login {
