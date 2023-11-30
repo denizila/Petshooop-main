@@ -16,5 +16,6 @@ public class Pet extends Model {
 	public String nome;
 	public String sexo;
 	public String observacoes;
+	public String servicos;
 	
 }
