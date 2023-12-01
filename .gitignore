@@ -4,3 +4,4 @@ eclipse/
 .settings/
 documentation/
 tmp/
+/bin/

@@ -1,0 +1,24 @@
+#{extends 'main.html' /}
+#{set title:'Cadastro do pet' /}
+
+<h1>#{get 'title' /}</h1>
+
+
+<form action="@{Veterinarios.cadastrar}" method="POST" class="row g-3">
+	<input class="" type="hidden" name="v.id" value="${v?.id}"/>
+	<div class="col-md-6">
+	  <label class="form-label">Nome</label>
+	  <input class="form-control" type="text" name="v.nome" value="${v?.nome}">
+	</div>
+	<div class="col-md-6">
+	  <label class="form-label">Especialização</label>
+	  <input class="form-control" type="text" name="v.especializacao" value="${v?.especializacao}">
+	</div>
+	<div class="col-12">
+	  <label class="form-label">Email Comercial</label>
+	  <input class="form-control" type="text" name="v.emailcomercial" value="${v?.emailcomercial}">
+	</div>
+	<div class="col-12">
+	  <button type="submit" class="btn btn-primary">Submeter</button>
+	</div>
+</form>

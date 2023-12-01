@@ -5,7 +5,7 @@ import play.mvc.Controller;
 
 public class Logins extends Controller {
 
-    public static void login {
+    public static void login (){
         render();
     }
 
@@ -15,7 +15,7 @@ public class Logins extends Controller {
         if (pessoalog != null) {
             session.put("Usuário Logado", pessoalog.nome);
             flash.success("Login realizado com sucesso!");
-            Pessoas.listar("");
+            Pessoas.listar();
         }
 
         flash.error("Credenciais inválidas");

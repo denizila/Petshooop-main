@@ -2,12 +2,13 @@ package controllers;
 import java.util.List;
 import models.Pessoa;
 import models.Pet;
+import models.Veterinario;
 import play.mvc.Controller;
 public class Veterinarios extends Controller{
     
 
 	 public static void form() {
-		
+		render();
 	  }
 	  public static void cadastrar(Veterinario v) {
 	  
@@ -21,7 +22,7 @@ public class Veterinarios extends Controller{
 	  	  if(buscar == null) {
 	  	 vetLista= Veterinario.findAll();
 	  	} else { 
-	  		vetLista = Pet.find("lower(nome) like ?1 or lower(especie) like ?1",
+	  		vetLista = Pet.find("lower(nome) like ?1 or lower(emailcomercial) like ?1",
 					"%"+ buscar.toLowerCase() +"%").fetch();}
 		 render(vetLista);
 	  }
@@ -32,7 +33,6 @@ public class Veterinarios extends Controller{
 	  }
 	  public static void editar(Long id) {
 		  Veterinario v = Veterinario.findById(id);
-		  	List<Pessoa> pessoas = Pessoa.findAll();
-		 renderTemplate("Pets/form.html", v, pessoas);
+			 renderTemplate("Veterinarios/form.html", v);
 	  }
 }
