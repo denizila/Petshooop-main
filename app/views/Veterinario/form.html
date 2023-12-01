@@ -1,0 +1,50 @@
+#{extends 'main.html' /}
+#{set title:'Cadastro do pet' /}
+
+<h1>#{get 'title' /}</h1>
+
+
+<form action="@{Pets.cadastrar}" method="POST" class="row g-3">
+	<input class="" type="hidden" name="m.id" value="${m?.id}"/>
+	<div class="col-md-6">
+	  <label class="form-label">Nome</label>
+	  <input class="form-control" type="text" name="m.nome" value="${m?.nome}">
+	</div>
+	<div class="col-md-6">
+	  <label class="form-label">Idade do Pet</label>
+	  <input class="form-control" type="text" name="m.idade" value="${m?.idade}">
+	</div>
+	<div class="col-12">
+	  <label class="form-label">Espécie</label>
+	  <input class="form-control" type="text" name="m.especie" value="${m?.especie}">
+	</div>
+	<div class="col-12">
+	  <label class="form-label">Detalhes do Animal</label>
+	  <input class="form-control" type="text" name="m.observacoes" value="${m?.observacoes}">
+	</div>
+	<div class="col-md-6">
+	  <label for="inputCity" class="form-label">Sexo</label>
+	  <br>
+	  <RadioGroup>
+		<input  type="radio" name="m.sexo" value="Fêmea"/> Fêmea
+		<input  type="radio" name="m.sexo" value="Macho"/> Macho
+	   </RadioGroup>
+	</div>
+	<div class="col-md-4">
+		<label for="inputState" class="form-label">Dono do Pet</label>
+		<select name="m.dono.id" class="form-select">
+			#{list items: pessoas, as:'p'}
+			<option value="${p?.id}">${p.nome}</option>
+			#{/list}
+		</select>
+	  </div>
+	  <br>
+	  <div class="col-12">
+		<label class="form-label">Serviços requiridos:</label>
+		<input class="form-control" type="text" name="m.servicos" value="${m?.servicos}">
+	  </div>
+
+	<div class="col-12">
+	  <button type="submit" class="btn btn-primary">Submeter</button>
+	</div>
+</form>
