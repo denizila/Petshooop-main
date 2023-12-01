@@ -1,14 +1,11 @@
 package controllers;
-
-public class Veterinarios {
-    package controllers;
 import java.util.List;
 import models.Pessoa;
 import models.Pet;
-import models.Veterinario;
 import play.mvc.Controller;
+public class Veterinarios extends Controller{
+    
 
-public class Pets extends Controller{
 	 public static void form() {
 		
 	  }
@@ -22,15 +19,15 @@ public class Pets extends Controller{
 		  
 	  	  List<Veterinario> vetLista;
 	  	  if(buscar == null) {
-	  	 vetLista= Pet.findAll();
+	  	 vetLista= Veterinario.findAll();
 	  	} else { 
 	  		vetLista = Pet.find("lower(nome) like ?1 or lower(especie) like ?1",
 					"%"+ buscar.toLowerCase() +"%").fetch();}
 		 render(vetLista);
 	  }
 	  public static void remover(Long id) {
-		  Pet m = Pet.findById(id);
-		  m.delete();
+		  Veterinario v = Veterinario.findById(id);
+		  v.delete();
 		  listar();
 	  }
 	  public static void editar(Long id) {
@@ -38,5 +35,4 @@ public class Pets extends Controller{
 		  	List<Pessoa> pessoas = Pessoa.findAll();
 		 renderTemplate("Pets/form.html", v, pessoas);
 	  }
-}
 }
