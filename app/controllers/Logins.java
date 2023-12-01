@@ -18,7 +18,7 @@ public class Logins extends Controller {
             Pessoas.listar();
         }
 
-        flash.error("Credenciais estão inválidas");
+        flash.error("Credenciais inválidas ");
         login();
     }
 
