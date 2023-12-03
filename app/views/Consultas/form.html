@@ -1,0 +1,45 @@
+#{extends 'main.html' /}
+#{set title:'Cadastro de consulta' /}
+
+<h1>#{get 'title' /}</h1>
+
+
+<form action="@{Consultas.cadastrar}" method="POST" class="row g-3">
+	<input class="" type="hidden" name="c.id" value="${c?.id}"/>
+	
+	<div class="col-md-4">
+		<label for="inputState" class="form-label">Animal</label>
+		<select name="c.animal.id" class="form-select">
+			#{list items: pet, as:'p'}
+			<option value="${p?.id}">${p.nome}</option>
+			#{/list}
+		</select>
+	  </div>
+	<div class="col-md-4">
+		<label for="inputState" class="form-label">Veterinario do Pet</label>
+		<select name="c.doutor.id" class="form-select">
+			#{list items: veterinarios, as:'v'}
+			<option value="${v?.id}">${v.nome}</option>
+			#{/list}
+		</select>
+	  </div>
+	<div class="col-md-6">
+	  <label for="inputCity" class="form-label">Serviços</label>
+	  <br>
+	  <RadioGroup>
+		<input  type="radio" name="c.servicos" value="Servico estetico"/> Serviços Estéticos
+		<input  type="radio" name="c.servicos" value="Creche"/> Creche
+		<input  type="radio" name="c.servicos" value="Vacinacao"/> Vacinação
+		<input  type="radio" name="c.servicos" value="Exame"/> Exames
+		<input  type="radio" name="c.servicos" value="Creche"/> Creche
+		<input  type="radio" name="c.servicos" value="Atendimento docimilio"/> Atendimento Domiciliar
+	   </RadioGroup>
+	</div>
+	<div class="col-md-6">
+	  <label class="form-label">Observações</label>
+	  <input class="form-control" type="text" name="c.observacoes" value="${c?.observacoes}">
+	</div>
+	<div class="col-12">
+	  <button type="submit" class="btn btn-primary">Submeter</button>
+	</div>
+</form>
