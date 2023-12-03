@@ -8,7 +8,7 @@ import play.db.jpa.Model;
 
 @Entity
 public class Pet extends Model {
-	
+
 	@ManyToOne
 	public Pessoa dono;
 
@@ -16,7 +16,7 @@ public class Pet extends Model {
 	public Veterinario medico;
 
 	public String especie;
-	
+
 	public String idade;
 
 	@Required
@@ -24,10 +24,5 @@ public class Pet extends Model {
 
 	@Required
 	public String sexo;
-	
-	public String observacoes;
-	
-	@Required
-	public String servicos;
-	
+
 }

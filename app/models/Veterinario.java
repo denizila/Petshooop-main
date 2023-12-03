@@ -7,10 +7,13 @@ import play.db.jpa.Model;
 
 @Entity
 public class Veterinario extends Model {
-   @Required
+
+	@Required
 	public String nome;
-   @Required
-    public String especializacao;
-   @Required
-    public String emailcomercial;
+
+	@Required
+	public String especializacao;
+
+	@Required
+	public String emailcomercial;
 }
