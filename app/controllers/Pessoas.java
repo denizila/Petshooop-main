@@ -2,8 +2,10 @@ package controllers;
 
 import java.util.List;
 
+import anotacions.Administrador;
 import models.Pessoa;
 import models.Pet;
+import play.data.validation.Valid;
 import play.mvc.Controller;
 
 public class Pessoas extends Controller {
@@ -11,9 +13,13 @@ public class Pessoas extends Controller {
 		render();
 	}
 
-	public static void cadastrar(Pessoa p) {
+	public static void cadastrar(@Valid Pessoa p) {
+
+		if(validation.hasErrors()) {
+			redirecionarErros();
+		}
 		p.save();
-		Pets.form();
+		Logins.login();
 	}
 
 	public static void listar() {
@@ -21,6 +27,7 @@ public class Pessoas extends Controller {
 		render(pessoas);
 	}
 
+	@Administrador
 	public static void remover(Long id) {
 		Pessoa p = Pessoa.findById(id);
 		p.delete();
@@ -30,6 +37,12 @@ public class Pessoas extends Controller {
 	public static void editar(Long id) {
 		Pessoa p = Pessoa.findById(id);
 		renderTemplate("Pessoas/form.html", p);
+	}
+	
+	private static void redirecionarErros() {
+		params.flash();
+		validation.keep();
+		form();
 	}
 
 }

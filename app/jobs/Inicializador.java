@@ -35,7 +35,7 @@ public class Inicializador extends Job {
 		if (Veterinario.count() == 0) {
 			Veterinario joao = new Veterinario();
 			joao.nome = "João da Silva";
-			joao.especializacao = "Graduado em cães";
+			joao.especializacao = "Especializado em cães";
 			joao.emailcomercial = "joaosilva@gmail.com";
 			joao.senha = "1234";
 			

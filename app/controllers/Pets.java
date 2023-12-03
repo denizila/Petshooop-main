@@ -1,8 +1,11 @@
 package controllers;
 
 import java.util.List;
+
+import anotacions.Administrador;
 import models.Pessoa;
 import models.Pet;
+import play.data.validation.Valid;
 import play.mvc.Controller;
 
 public class Pets extends Controller {
@@ -11,8 +14,11 @@ public class Pets extends Controller {
 		render(pessoas);
 	}
 
-	public static void cadastrar(Pet m) {
+	public static void cadastrar(@Valid Pet m) {
 
+		if(validation.hasErrors()) {
+			redirecionarErros();
+		}
 		m.save();
 		listar();
 	}
@@ -30,6 +36,7 @@ public class Pets extends Controller {
 		render(petsLista);
 	}
 
+	@Administrador
 	public static void remover(Long id) {
 		Pet m = Pet.findById(id);
 		m.delete();
@@ -40,5 +47,11 @@ public class Pets extends Controller {
 		Pet m = Pet.findById(id);
 		List<Pessoa> pessoas = Pessoa.findAll();
 		renderTemplate("Pets/form.html", m, pessoas);
+	}
+	
+	private static void redirecionarErros() {
+		params.flash();
+		validation.keep();
+		form();
 	}
 }
