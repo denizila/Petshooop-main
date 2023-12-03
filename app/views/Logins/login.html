@@ -1,0 +1,17 @@
+#{extends 'main.html' /}
+#{set title:'Bem Vindo ao My Pets!' /}
+
+<form action="@{Logins.logar}" class="row g-3">
+	<div class="col-md-6">
+	  <label class="form-label">Email</label>
+	  <input class="form-control" type="email" name="email" placeholder="Insira seu email">
+	</div>
+	<div class="col-md-6">
+	  <label class="form-label">senha</label>
+	  <input class="form-control" type="Password" name="senha" placeholder="Insira sua senha">
+	</div>
+	<p>Não possui conta? <a class="btn btn-primary" href="@{Pessoas.form}">Clique aqui</a></p>
+	<div class="col-12">
+	  <button type="submit" class="btn btn-primary">Logar</button>
+	</div>
+</form>
