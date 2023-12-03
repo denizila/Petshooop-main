@@ -1,6 +1,7 @@
 package jobs;
 
 import models.Pessoa;
+import models.Veterinario;
 import play.jobs.Job;
 import play.jobs.OnApplicationStart;
 
@@ -11,22 +12,34 @@ public class Inicializador extends Job {
 	public void doJob() throws Exception {
 		if (Pessoa.count() == 0) {
 
-			Pessoa joao = new Pessoa();
-			joao.nome = "Denis E. Silva";
-			joao.endereco = "Natal";
-			joao.telefone = "99999-9999";
-			joao.email = "denden@gmail.com";
-			joao.senha = "12345";
+			Pessoa denis = new Pessoa();
+			denis.nome = "Denis E. Silva";
+			denis.endereco = "Natal";
+			denis.telefone = "99999-9999";
+			denis.email = "denden@gmail.com";
+			denis.senha = "12345";
 
+			denis.save();
+
+			Pessoa gabriel = new Pessoa();
+			
+			gabriel.nome = "Gabriel R. Silva";
+			gabriel.endereco = "Jardim";
+			gabriel.telefone = "98888-9999";
+			gabriel.email = "gabrielrichard@gmail.com";
+			gabriel.senha = "123456";
+			
+			gabriel.save();
+		}
+		
+		if (Veterinario.count() == 0) {
+			Veterinario joao = new Veterinario();
+			joao.nome = "João da Silva";
+			joao.especializacao = "Graduado em cães";
+			joao.emailcomercial = "joaosilva@gmail.com";
+			joao.senha = "1234";
+			
 			joao.save();
-
-			Pessoa maria = new Pessoa();
-			maria.nome = "Gabriel R. Silva";
-			joao.endereco = "Jardim";
-			joao.telefone = "98888-9999";
-			maria.email = "gabsrrr@gmail.com";
-			maria.senha = "54321";
-			maria.save();
 		}
 	}
 

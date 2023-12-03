@@ -21,7 +21,6 @@
       <th>Sexo</th>
       <th>Detalhes</th>
       <th>Dono</th>
-      <th>Serviços</th>
       <th>Ações</th>
       
       
@@ -36,9 +35,8 @@
 	      <td>${p.especie}</td>
 	      <td>${p.idade}</td>
 	      <td>${p.sexo}</td>
-	      <td>${p.observacoes}</td>
+	      <td>${p.detalhes}</td>
 	      <td>${p.dono?.nome}</td>
-        <td>${p.servicos}</td>
 	      <td>
 	      	<a class="btn btn-warning" href="@{Pets.editar(p.id)}">Editar</a>
 	      	<a class="btn btn-danger" href="@{Pets.remover(p.id)}">Remover</a>

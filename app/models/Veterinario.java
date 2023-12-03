@@ -16,4 +16,7 @@ public class Veterinario extends Model {
 
 	@Required
 	public String emailcomercial;
+	
+	@Required
+	public String senha;
 }

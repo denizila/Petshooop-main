@@ -1,6 +1,8 @@
 package controllers;
 
 import java.util.List;
+
+import models.Consulta;
 import models.Pessoa;
 import models.Pet;
 import models.Veterinario;
@@ -30,6 +32,11 @@ public class Veterinarios extends Controller {
 					.fetch();
 		}
 		render(vetLista);
+	}
+	
+	public static void agenda(Long id ) {
+		List<Consulta> consultas = Consulta.find("(consulta.doutor.id) like ?1",id).fetch();
+		render(consultas);
 	}
 
 	public static void remover(Long id) {

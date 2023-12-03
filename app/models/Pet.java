@@ -21,6 +21,8 @@ public class Pet extends Model {
 
 	@Required
 	public String nome;
+	
+	public String detalhes;
 
 	@Required
 	public String sexo;
