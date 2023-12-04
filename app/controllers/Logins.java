@@ -18,7 +18,7 @@ public class Logins extends Controller {
 			session.put("UsuarioLogado", pessoalog.nome);
 			session.put("usuarioId", pessoalog.id);
 			flash.success("Login realizado com sucesso!");
-			Pets.form();
+			Pets.listar();
 		} else if(doutor != null) {
 			session.put("usuarioLogado", doutor.nome);
 			session.put("usuarioId", doutor.id);
