@@ -9,18 +9,22 @@
 	<div class="col-md-6">
 	  <label class="form-label">Nome</label>
 	  <input class="form-control" type="text" name="m.nome" value="${m?.nome}">
+	<span style="color:red;">#{error 'm.nome' /}</span>
 	</div>
 	<div class="col-md-6">
 	  <label class="form-label">Idade do Pet</label>
 	  <input class="form-control" type="text" name="m.idade" value="${m?.idade}">
+	
 	</div>
 	<div class="col-12">
 	  <label class="form-label">Espécie</label>
 	  <input class="form-control" type="text" name="m.especie" value="${m?.especie}">
+	
 	</div>
 	<div class="col-12">
 	  <label class="form-label">Detalhes do Animal</label>
 	  <input class="form-control" type="text" name="m.detalhes" value="${m?.detalhes}">
+	<span style="color:red;">#{error 'm.detalhes' /}</span>
 	</div>
 	<div class="col-md-6">
 	  <label for="inputCity" class="form-label">Sexo</label>
@@ -29,6 +33,7 @@
 		<input  type="radio" name="m.sexo" value="Fêmea"/> Fêmea
 		<input  type="radio" name="m.sexo" value="Macho"/> Macho
 	   </RadioGroup>
+	   #{error 'm.sexo' /}
 	</div>
 	<div class="col-md-4">
 		<label for="inputState" class="form-label">Dono do Pet</label>

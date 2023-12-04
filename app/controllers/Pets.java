@@ -3,6 +3,7 @@ package controllers;
 import java.util.List;
 import models.Pessoa;
 import models.Pet;
+import play.data.validation.Valid;
 import play.mvc.Controller;
 
 public class Pets extends Controller {
@@ -11,10 +12,15 @@ public class Pets extends Controller {
 		render(pessoas);
 	}
 
-	public static void cadastrar(Pet m) {
+	public static void cadastrar(@Valid Pet m) {
 
+		if(validation.hasErrors()) {
+			validation.keep();
+			form();
+		}
 		m.save();
 		listar();
+		
 	}
 
 	public static void listar() {

@@ -9,18 +9,22 @@
 	<div class="col-md-6">
 	  <label class="form-label">Nome</label>
 	  <input class="form-control" type="text" name="v.nome" value="${v?.nome}">
+		<span style="color:red;">#{error 'v.nome' /}</span>
 	</div>
 	<div class="col-md-6">
 	  <label class="form-label">Especialização</label>
 	  <input class="form-control" type="text" name="v.especializacao" value="${v?.especializacao}">
+		<span style="color:red;">#{error 'v.especializacao' /}</span>
 	</div>
 	<div class="col-12">
 	  <label class="form-label">Email Comercial</label>
 	  <input class="form-control" type="email" name="v.emailcomercial" value="${v?.emailcomercial}">
+	<span style="color:red;">#{error 'v.emailcomercial' /}</span>
 	</div>
 	<div class="col-12">
 	  <label class="form-label">Senha</label>
 	  <input class="form-control" type="password" name="v.emailcomercial" value="${v?.emailcomercial}">
+	<span style="color:red;">#{error 'v.senha' /}</span>
 	</div>
 	<div class="col-12">
 	  <button type="submit" class="btn btn-primary">Submeter</button>

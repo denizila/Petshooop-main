@@ -4,6 +4,7 @@ import java.util.List;
 
 import models.Pessoa;
 import models.Pet;
+import play.data.validation.Valid;
 import play.mvc.Controller;
 
 public class Pessoas extends Controller {
@@ -11,7 +12,11 @@ public class Pessoas extends Controller {
 		render();
 	}
 
-	public static void cadastrar(Pessoa p) {
+	public static void cadastrar(@Valid Pessoa p) {
+		if(validation.hasErrors()) {
+			validation.keep();
+			form();
+		}
 		p.save();
 		Pets.form();
 	}

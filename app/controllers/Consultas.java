@@ -3,16 +3,24 @@ package controllers;
 import java.util.List;
 
 import models.Consulta;
-
+import models.Pet;
+import models.Veterinario;
+import play.data.validation.Valid;
 import play.mvc.Controller;
 
 public class Consultas extends Controller {
 
 	public static void form() {
-		render();
+		List<Pet> pets = Pet.findAll();
+		List<Veterinario> veterinarios = Veterinario.findAll();
+		render(pets, veterinarios);
 	}
 
-	public static void cadastrar(Consulta c) {
+	public static void cadastrar(@Valid Consulta c) {
+		if(validation.hasErrors()) {
+			validation.keep();
+			form();
+		}
 		c.save();
 		listar();
 	}

@@ -6,6 +6,7 @@ import models.Consulta;
 import models.Pessoa;
 import models.Pet;
 import models.Veterinario;
+import play.data.validation.Valid;
 import play.mvc.Controller;
 
 public class Veterinarios extends Controller {
@@ -14,8 +15,11 @@ public class Veterinarios extends Controller {
 		render();
 	}
 
-	public static void cadastrar(Veterinario v) {
-
+	public static void cadastrar(@Valid Veterinario v) {
+		if(validation.hasErrors()) {
+			validation.keep();
+			form();
+		}
 		v.save();
 		listar();
 	}
@@ -27,9 +31,7 @@ public class Veterinarios extends Controller {
 		if (buscar == null) {
 			vetLista = Veterinario.findAll();
 		} else {
-			vetLista = Pet
-					.find("lower(nome) like ?1 or lower(emailcomercial) like ?1", "%" + buscar.toLowerCase() + "%")
-					.fetch();
+			vetLista = Veterinario.find("lower(nome) like ?1 or lower(emailcomercial) like ?1", "%" + buscar.toLowerCase() + "%").fetch();
 		}
 		render(vetLista);
 	}

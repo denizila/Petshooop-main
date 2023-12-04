@@ -10,16 +10,17 @@
 	<div class="col-md-4">
 		<label for="inputState" class="form-label">Animal</label>
 		<select name="c.animal.id" class="form-select">
-			#{list items: pet, as:'p'}
-			<option value="${p?.id}">${p.nome}</option>
+			#{list items:pets, as:'pet'}
+			<option value="${pet?.id}">${pet?.nome}</option>
 			#{/list}
 		</select>
+		<span style="color:red;">#{error '' /}</span>
 	  </div>
 	<div class="col-md-4">
-		<label for="inputState" class="form-label">Veterinario do Pet</label>
+		<label for="inputState" class="form-label">Veterinário do Pet</label>
 		<select name="c.doutor.id" class="form-select">
-			#{list items: veterinarios, as:'v'}
-			<option value="${v?.id}">${v.nome}</option>
+			#{list items:veterinarios, as:'vet'}
+			<option value="${vet?.id}">${vet?.nome}</option>
 			#{/list}
 		</select>
 	  </div>
@@ -27,18 +28,23 @@
 	  <label for="inputCity" class="form-label">Serviços</label>
 	  <br>
 	  <RadioGroup>
-		<input  type="radio" name="c.servicos" value="Servico estetico"/> Serviços Estéticos
-		<input  type="radio" name="c.servicos" value="Creche"/> Creche
-		<input  type="radio" name="c.servicos" value="Vacinacao"/> Vacinação
-		<input  type="radio" name="c.servicos" value="Exame"/> Exames
-		<input  type="radio" name="c.servicos" value="Creche"/> Creche
-		<input  type="radio" name="c.servicos" value="Atendimento docimilio"/> Atendimento Domiciliar
+		<input  type="checkbox" name="c.servicos" value="Servico estetico"/> Serviços Estéticos
+		<input  type="checkbox" name="c.servicos" value="Creche"/> Creche
+		<input  type="checkbox" name="c.servicos" value="Vacinacao"/> Vacinação
+		<input  type="checkbox" name="c.servicos" value="Exame"/> Exames
+		<input  type="checkbox" name="c.servicos" value="Atendimento docimilio"/> Atendimento Domiciliar
 	   </RadioGroup>
 	</div>
-	<div class="col-md-6">
+	</br>
+	<div class="col-md-7">
 	  <label class="form-label">Observações</label>
 	  <input class="form-control" type="text" name="c.observacoes" value="${c?.observacoes}">
 	</div>
+	<div class="col-md-7">
+	  <label class="form-label">Data:</label>
+	  <input class="form-control" type="date" name="c.data" value="${c?.data}">
+	</div>
+	
 	<div class="col-12">
 	  <button type="submit" class="btn btn-primary">Submeter</button>
 	</div>

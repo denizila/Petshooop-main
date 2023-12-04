@@ -1,0 +1,48 @@
+#{extends 'main.html' /}
+#{set title:'Listagem de Pets' /}
+
+
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="text" placeholder="Termo de busca" aria-label="Search" value="${buscar}" name="buscar">
+      <input class="btn btn-outline-success" type="submit" value="Buscar"/>
+    </form>
+  </div>
+</nav>
+
+<table class="table table-dark table-striped-columns" border="1">
+  <thead class="table-group-divider">
+    <tr>
+      <th>ID</th>
+      <th>Doutor:</th>
+      <th>Animal:</th>
+      <th>Serviços</th>
+      <th>Observações:</th>
+      <th>Data:</th>
+      <th>Ações</th>
+      
+      
+     
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+  	#{list items:consultas, as:'c'}
+	    <tr>
+	      <td>${c.id}</td>
+	      <td>${c.doutor?.nome}</td>
+	      <td>${c.animal?.nome}</td>
+	      <td>${c?.servicos}</td>
+	      <td>${c?.observacoes}</td>
+	      <td>${c?.data}</td>
+	      <td>
+	      	<a class="btn btn-warning" href="@{Consultas.editar(c.id)}">Editar</a>
+	      	<a class="btn btn-danger" href="@{Consultas.remover(c.id)}">Remover</a>
+	      </td>
+	    </tr>
+	#{/list}
+  </tbody>
+</table>
+
+<a class="btn btn-primary" href="@{Pets.form}">Cadastrar Pet</a>
+

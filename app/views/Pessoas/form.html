@@ -11,22 +11,27 @@
 	<div class="col-md-6">
 	  <label class="form-label">Nome</label>
 	  <input class="form-control" type="text" name="p.nome" value="${p?.nome}">
+	<span style="color:red;">#{error 'p.nome' /}</span>
 	</div>
 	<div class="col-md-6">
 	  <label class="form-label">Telefone</label>
 	  <input class="form-control" type="text" name="p.telefone" value="${p?.telefone}">
+	  	<span style="color:red;">#{error 'p.telefone' /}</span>
 	</div>
 	<div class="col-12">
 	  <label class="form-label">Email</label>
 	  <input class="form-control" type="email" name="p.email" value="${p?.email}">
+		<span style="color:red;">#{error 'p.email' /}</span>
 	</div>
 	<div class="col-12">
 	  <label class="form-label">Endereço</label>
 	  <input class="form-control" type="text" name="p.endereco" value="${p?.endereco}">
+	  	<span style="color:red;">#{error 'p.endereco' /}</span>
 	</div>
 	<div class="col-md-6">
 	  <label for="inputCity" class="form-label">Senha</label>
 	  <input class="form-control" type="password" name="p.senha" value="${p?.senha}">
+		<span style="color:red;">#{error 'p.senha' /}</span>
 	</div>
 	<div class="col-12">
 	  <button type="submit" class="btn btn-primary">Submeter</button>
