@@ -1,6 +1,8 @@
 package controllers;
 
+import java.util.Collections;
 import java.util.List;
+
 import models.Pessoa;
 import models.Pet;
 import play.data.validation.Valid;
@@ -35,7 +37,17 @@ public class Pets extends Controller {
 		}
 		render(petsLista);
 	}
-
+	public static void listarAjax(String buscar) {
+		List<Pet> petsLista;
+		if (buscar == null || buscar.trim().isEmpty() ) {
+			petsLista = Pet.findAll();
+		} else {
+			petsLista = Pet.find("lower(nome) like ?1 or lower(especie) like ?1", "%" + buscar.toLowerCase() + "%")
+					.fetch();
+		}
+		renderJSON(petsLista);
+	}
+	
 	public static void remover(Long id) {
 		Pet m = Pet.findById(id);
 		m.delete();

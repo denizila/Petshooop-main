@@ -48,3 +48,35 @@
 
 <a class="btn btn-primary" href="@{Pets.form}">Cadastrar Pet</a>
 
+<script type="text/javascript">
+$(document).ready(function() {
+	$("form").submit(function(e) {
+	 e.preventDefault();
+	 $.ajax({
+		 type: "GET", //INFORME O TIPO DA REQUISICAO
+		 url: "@{Pets.listarAjax}", //INFORME A URL DE DESTINO
+		 data: $(this).serialize(), //ENVIA DADOS DO FORMULARIO
+		 success: function(data) {
+			 $("tbody").empty();
+			 $.each(data, function(i, item) {
+				 $("tbody").append(
+				"<tr>"+
+				"<th>"+item.id+"</th>"+
+			      "<td>"+item.nome+"</td>"+
+			      "<td>"+item.especie+"</td>"+
+			      "<td>"+item.idade+"</td>"+
+			      "<td>"+item.sexo+"</td>"+
+			      "<td>"+item.detalhes+"</td>"+
+			      "<td>"+item.dono?.nome+"</td>"+
+					"<td>"+
+					"<a class='btn btn-warning' href=/pets/editar?id="+item.id+">Editar</a> "+
+					"<a class='btn btn-danger' href=/pets/remover?id="+item.id+">Remover</a>" +
+	      		"</td>"+
+	    "</tr>");
+			 });
+		 }
+	 });
+	});
+});
+</script>
+

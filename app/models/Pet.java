@@ -24,7 +24,6 @@ public class Pet extends Model {
 	public String nome;
 	
 	@Required
-	@Min(4)
 	public String detalhes;
 
 	@Required
