@@ -8,7 +8,8 @@ import models.Pet;
 import models.Veterinario;
 import play.data.validation.Valid;
 import play.mvc.Controller;
-
+import play.mvc.With;
+@With(Secure.class)
 public class Veterinarios extends Controller {
 
 	public static void form() {
@@ -37,7 +38,7 @@ public class Veterinarios extends Controller {
 	}
 	
 	public static void agenda(Long id ) {
-		List<Consulta> consultas = Consulta.find("(consulta.doutor.id) like ?1",id).fetch();
+		List<Consulta> consultas = Consulta.find("(doutor.id) like ?1",id).fetch();
 		render(consultas);
 	}
 

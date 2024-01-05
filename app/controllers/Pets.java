@@ -7,7 +7,8 @@ import models.Pessoa;
 import models.Pet;
 import play.data.validation.Valid;
 import play.mvc.Controller;
-
+import play.mvc.With;
+@With(Secure.class)
 public class Pets extends Controller {
 	public static void form() {
 		List<Pessoa> pessoas = Pessoa.findAll();
@@ -21,20 +22,13 @@ public class Pets extends Controller {
 			form();
 		}
 		m.save();
-		listar();
+		listar(m.dono.id);
 		
 	}
 
-	public static void listar() {
-		String buscar = params.get("buscar");
-
-		List<Pet> petsLista;
-		if (buscar == null) {
-			petsLista = Pet.findAll();
-		} else {
-			petsLista = Pet.find("lower(nome) like ?1 or lower(especie) like ?1", "%" + buscar.toLowerCase() + "%")
-					.fetch();
-		}
+	public static void listar(Long id) {
+		List<Pet> petsLista = Pet.find("(dono.id) like ?1",id ).fetch();
+		
 		render(petsLista);
 	}
 	public static void listarAjax(String buscar) {
@@ -51,7 +45,7 @@ public class Pets extends Controller {
 	public static void remover(Long id) {
 		Pet m = Pet.findById(id);
 		m.delete();
-		listar();
+		listar(m.dono.id);
 	}
 
 	public static void editar(Long id) {

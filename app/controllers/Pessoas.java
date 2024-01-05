@@ -6,7 +6,8 @@ import models.Pessoa;
 import models.Pet;
 import play.data.validation.Valid;
 import play.mvc.Controller;
-
+import play.mvc.With;
+@With(Secure.class)
 public class Pessoas extends Controller {
 	public static void form() {
 		render();

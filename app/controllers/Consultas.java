@@ -7,7 +7,9 @@ import models.Pet;
 import models.Veterinario;
 import play.data.validation.Valid;
 import play.mvc.Controller;
+import play.mvc.With;
 
+@With(Secure.class)
 public class Consultas extends Controller {
 
 	public static void form() {

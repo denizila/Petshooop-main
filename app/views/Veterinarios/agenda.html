@@ -1,0 +1,22 @@
+#{extends 'main.html' /}
+#{set title:'Minha agenda de consultas' /}  
+
+#{list items: consultas, as:'c'}
+<div class="card mt-3">
+  <div class="card-header">
+    Consulta #${c.id}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Cliente: ${c.animal.dono.nome}</h5>
+    <p class="card-text">Nome do pet: ${c.animal.nome}</p>
+    <p class="card-text">Especie: ${c.animal.especie}</p>
+    <p class="card-text">Serviços: ${c.servicos}</p>
+    <p class="card-text">Data: ${c.data.format('dd/MM/yyyy')}</p>
+    <p class="card-text">Observações: ${c.observacoes}</p>
+   
+  	<a href="@{Consultas.remover(c.id)}" class="btn btn-danger">Cancelar</a>
+	
+  </div>
+</div>		
+  	#{/list}
+  
