@@ -15,7 +15,7 @@ public class Logins extends Controller {
 		Pessoa pessoalog = Pessoa.find("email = ?1 and senha = ?2", email, senha).first();
 		Veterinario doutor = Veterinario.find("emailcomercial = ?1 and senha = ?2", email, senha).first();
 		if (pessoalog != null) {
-			session.put("UsuarioLogado", pessoalog.nome);
+			session.put("usuarioLogado", pessoalog.nome);
 			session.put("usuarioId", pessoalog.id);
 			flash.success("Login realizado com sucesso!");
 			Pets.listar(pessoalog.id);
