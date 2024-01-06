@@ -1,0 +1,66 @@
+<mxfile host="app.diagrams.net" modified="2024-01-06T00:01:49.803Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="QjxPBVhcX54SnbyWBLn0" version="22.1.17" type="github">
+  <diagram name="Página-1" id="kkjEJVUQ9LQGLHzArtHF">
+    <mxGraphModel dx="860" dy="348" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fpKk_rzwGWzmjg_oa7d1-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fpKk_rzwGWzmjg_oa7d1-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="450" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fpKk_rzwGWzmjg_oa7d1-12" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="80" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fpKk_rzwGWzmjg_oa7d1-14" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fpKk_rzwGWzmjg_oa7d1-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fpKk_rzwGWzmjg_oa7d1-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fpKk_rzwGWzmjg_oa7d1-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="190" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="231" y="100" />
+              <mxPoint x="231" y="200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fpKk_rzwGWzmjg_oa7d1-1" value="Dono do pet" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="70" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fpKk_rzwGWzmjg_oa7d1-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fpKk_rzwGWzmjg_oa7d1-3" target="fpKk_rzwGWzmjg_oa7d1-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fpKk_rzwGWzmjg_oa7d1-3" value="Pet" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="460" y="60" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fpKk_rzwGWzmjg_oa7d1-4" value="Veterinário" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="280" y="220" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fpKk_rzwGWzmjg_oa7d1-5" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="220" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="fpKk_rzwGWzmjg_oa7d1-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.022;entryY=0.385;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="fpKk_rzwGWzmjg_oa7d1-4" target="fpKk_rzwGWzmjg_oa7d1-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fpKk_rzwGWzmjg_oa7d1-10" value="Consulta" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="500" y="245" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fpKk_rzwGWzmjg_oa7d1-13" value="Cadastro do pet" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="85" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fpKk_rzwGWzmjg_oa7d1-16" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="344" y="130" width="70" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="fpKk_rzwGWzmjg_oa7d1-17" value="Pedido da consulta" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="349" y="140" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
